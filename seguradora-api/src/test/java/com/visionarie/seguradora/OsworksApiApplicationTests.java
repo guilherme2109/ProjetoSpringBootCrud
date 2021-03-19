@@ -1,4 +1,4 @@
-package com.algaworks.osworks;
+package com.visionarie.seguradora;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
