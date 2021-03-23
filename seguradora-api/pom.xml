@@ -8,11 +8,11 @@
 		<version>2.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.algaworks.osworks</groupId>
-	<artifactId>osworks-api</artifactId>
+	<groupId>com.visionarie.seguradora</groupId>
+	<artifactId>seguradora-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>osworks-api</name>
-	<description>API do OSWorks</description>
+	<name>seguradora-api</name>
+	<description>API do Seguradora</description>
 
 	<properties>
 		<java.version>11</java.version>

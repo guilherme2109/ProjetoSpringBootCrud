@@ -54,27 +54,28 @@ public class ClienteController {
 		return cadastroCliente.salvar(cliente);
 	}
 	
-	@PutMapping("/{clienteId}")
-	public ResponseEntity<Cliente> atualizar(@Valid @PathVariable Long clienteId, @RequestBody Cliente cliente) {
+	@PutMapping("/{clienteID}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<Cliente> atualizar(@PathVariable Long clienteID,@RequestBody Cliente cliente ) {
 		
-		if(!clienteRepository.existsById(clienteId)) {
+		if(!clienteRepository.existsById(clienteID)) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		cliente.setId(clienteId);
-		cliente = cadastroCliente.salvar(cliente);
+		cliente.setId(clienteID);
+		cliente = cadastroCliente.alterar(cliente);
 		
 		return ResponseEntity.ok(cliente);
 	}
 	
-	@DeleteMapping("/{clienteId}")
-	public ResponseEntity<Void> remover(@PathVariable Long clienteId) {
+	@DeleteMapping("/{clienteID}")
+	public ResponseEntity<Void> remover(@PathVariable Long clienteID) {
 		
-		if(!clienteRepository.existsById(clienteId)) {
+		if(!clienteRepository.existsById(clienteID)) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		cadastroCliente.excluir(clienteId);
+		cadastroCliente.excluir(clienteID);
 		
 		return ResponseEntity.noContent().build();
 	}

@@ -10,15 +10,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Apolice {
+public class Apolices {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "IDAPOLICE")
+	@Column(name = "IDAPOLICES")
 	private Long idApolice;
 
 	@Column(name = "NUMEROAPOLICE")
-	private Integer numeroApolice;
+	private Long numeroApolice;
 
 	@Column(name = "INICIOVIGENCIA")
 	private Date inicioVigencia;
@@ -32,6 +32,17 @@ public class Apolice {
 	@Column(name = "VALORAPOLICE")
 	private BigDecimal valorApolice;
 
+	@Column(name = "IDCLIENTE")
+	private Long idCliente;
+
+	public Long getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(Long idCliente) {
+		this.idCliente = idCliente;
+	}
+
 	public Long getIdApolice() {
 		return idApolice;
 	}
@@ -40,11 +51,11 @@ public class Apolice {
 		this.idApolice = idApolice;
 	}
 
-	public Integer getNumeroApolice() {
+	public Long getNumeroApolice() {
 		return numeroApolice;
 	}
 
-	public void setNumeroApolice(Integer numeroApolice) {
+	public void setNumeroApolice(Long numeroApolice) {
 		this.numeroApolice = numeroApolice;
 	}
 

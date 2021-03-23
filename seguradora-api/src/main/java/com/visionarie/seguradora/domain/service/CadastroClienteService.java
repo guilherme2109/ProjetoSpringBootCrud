@@ -24,6 +24,10 @@ public class CadastroClienteService {
 		
 		return clienteRepository.save(cliente);
 	}
+
+	public Cliente alterar(Cliente cliente) {
+		return clienteRepository.save(cliente);
+	}
 	
 	public void excluir(Long clienteId) {
 		clienteRepository.deleteById(clienteId);
